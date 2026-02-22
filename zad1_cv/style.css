@@ -26,10 +26,9 @@ body{
   width:min(980px, calc(100% - 32px));
   margin:24px auto;
 
-  /* ОДНА сітка для всього CV */
   display:grid;
   grid-template-columns:320px 1fr;
-  grid-template-rows:auto auto auto; /* header-right, content, footer */
+  grid-template-rows:auto auto auto; 
   column-gap:16px;
   row-gap:16px;
   grid-template-areas:
@@ -38,20 +37,18 @@ body{
     "footer  footer";
 }
 
-/* Прибираємо “дві окремі сітки” */
 .top{ display:contents; }
 .layout{ display:contents; }
 
-/* Розкладка елементів по областях */
 .sidebar{ grid-area:sidebar; }
 .top__right{ grid-area:header; }
 .content{ grid-area:content; }
 .foot{ grid-area:footer; }
 
 .top__right{
-  background: var(--paper);      /* білий */
-  color: var(--text);            /* темний текст */
-  border: 1px solid var(--line); /* світла рамка */
+  background: var(--paper);     
+  color: var(--text);            
+  border: 1px solid var(--line); 
   border-radius: var(--radius);
   padding:18px 20px;
 }
@@ -71,14 +68,12 @@ h1{
   color: var(--muted);
 }
 
-/* ===== ЛІВА КОЛОНКА — СУЦІЛЬНИЙ БЛОК ===== */
 .sidebar{
   background:var(--sidebar);
   border-radius:var(--radius);
   overflow:hidden;
 }
 
-/* фото */
 .sidebar__photo{
   padding:16px;
   background:linear-gradient(180deg, var(--sidebar2), var(--sidebar));
@@ -94,7 +89,6 @@ h1{
   border:1px solid rgba(255,255,255,.14);
 }
 
-/* секції в сайдбарі — ПРОЗОРІ, без “карток” */
 .sidebar .s{
   background:transparent !important;
   border:0 !important;
@@ -123,7 +117,6 @@ h1{
 }
 .sidebar a:hover{ text-decoration:underline; }
 
-/* контакт — key/value */
 .kv{ margin-top:6px; }
 .kv__row{
   display:flex;
@@ -136,7 +129,6 @@ h1{
 .kv__k{ opacity:.85; }
 .kv__v{ text-align:right; font-weight:600; }
 
-/* кнопки */
 .btns{
   display:flex;
   gap:10px;
@@ -154,14 +146,12 @@ h1{
 }
 .btn:hover{ background:rgba(255,255,255,.16); }
 
-/* список умінь */
 .bullets{
   margin:8px 0 0;
   padding-left:18px;
 }
 .bullets li{ margin:8px 0; }
 
-/* ===== ПРАВА КОЛОНКА — БЕЗ ВІДСТУПУ ЗВЕРХУ ===== */
 .content{
   display:flex;
   flex-direction:column;
@@ -170,7 +160,6 @@ h1{
   padding:0;
 }
 
-/* секції справа як картки */
 .content .s{
   background:var(--paper);
   border:1px solid var(--line);
@@ -196,7 +185,6 @@ p{ margin:8px 0; }
 }
 .nums li{ margin:8px 0; }
 
-/* блоки досвіду */
 .job{
   border:1px solid var(--line);
   border-radius:12px;
@@ -227,7 +215,6 @@ p{ margin:8px 0; }
   font-weight:600;
 }
 
-/* footer */
 .foot{
   text-align:center;
   color:var(--muted);
@@ -236,7 +223,6 @@ p{ margin:8px 0; }
   padding:0;
 }
 
-/* Mobile */
 @media (max-width:900px){
   .cv{
     grid-template-columns:1fr;
