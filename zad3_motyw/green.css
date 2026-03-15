@@ -1,0 +1,234 @@
+:root {
+  --bg: #f0f4f0;
+  --paper: #ffffff;
+  --sidebar: #2d3a2d;
+  --sidebar-alt: #3a4a3a;
+  --main: #2e8b57;
+  --text: #1a221a;
+  --muted: #5a6b5a;
+  --line: #e0e6e0;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Verdana', Geneva, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.cv {
+  width: min(980px, calc(100% - 32px));
+  margin: 24px auto;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "sidebar header"
+    "sidebar content"
+    "footer footer";
+  column-gap: 16px;
+  row-gap: 16px;
+}
+
+.top, .layout { 
+  display: contents; 
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: var(--sidebar);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sidebar__photo {
+  padding: 16px;
+  background: linear-gradient(180deg, var(--sidebar-alt), var(--sidebar));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar__photo img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  border: 2px solid var(--main);
+}
+
+.sidebar .s {
+  padding: 14px 16px;
+  color: #f3f4f6;
+}
+
+.sidebar .s + .s {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .s__title {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--main);
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+  color: var(--main);
+}
+
+.top__right {
+  grid-area: header;
+  background: var(--paper);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--main);
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+  color: var(--main);
+  letter-spacing: 0.2px;
+}
+
+.top__role {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content .s {
+  background: var(--paper);
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.content .s__title {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--main);
+  color: var(--main);
+}
+
+.job {
+  padding: 12px;
+  margin-top: 10px;
+  background: #fbfcff;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--main);
+  border-radius: 12px;
+}
+
+.job__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.job__title {
+  margin: 8px 0 2px;
+  font-size: 15px;
+  color: var(--main);
+}
+
+.job__company {
+  margin: 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.kv { margin-top: 6px; }
+
+.kv__row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.kv__row:last-child { border-bottom: none; }
+
+.kv__k { opacity: 0.85; font-size: 13px; }
+
+.kv__v { font-weight: 600; text-align: right; }
+
+.btns {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 8px 12px;
+  background: var(--main);
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bullets, .nums, .checks {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.bullets li, .nums li, .checks li {
+  margin-bottom: 6px;
+}
+
+.foot {
+  grid-area: footer;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .cv {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "header"
+      "sidebar"
+      "content"
+      "footer";
+  }
+  .sidebar__photo img {
+    height: 220px;
+  }
+}

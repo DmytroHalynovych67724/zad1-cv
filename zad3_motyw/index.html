@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV – Dmytro Halynovych</title>
+  <link rel="stylesheet" href="red.css" id="main-style" />
+  <link rel="stylesheet" href="button.css" />
+</head>
+
+<body>
+  <div class="cv">
+
+    <header class="top">
+      <div class="top__right">
+        <h1>Dmytro Halynovych</h1>
+        <p class="top__role">STUDENT</p>
+      </div>
+    </header>
+
+    <main class="layout">
+
+      <div class="sidebar">
+        <div class="sidebar__photo">
+          <img src="photo.jpg" alt="Zdjęcie profilowe – Dmytro Halynovych" />
+        </div>
+
+        <section class="s s--dark" id="kontakt">
+          <h2 class="s__title"><span class="ico ico-user" aria-hidden="true"></span>Kontakt</h2>
+
+          <div class="kv">
+            <div class="kv__row">
+              <span class="kv__k">E-mail</span>
+              <span class="kv__v"><a href="mailto:dhalyno1@stu.vistula.edu.pl">dhalyno1@stu.vistula.edu.pl</a></span>
+            </div>
+
+            <div class="kv__row">
+              <span class="kv__k">Telefon</span>
+              <span class="kv__v"><a href="tel:+48123123123">+48 123 123 123</a></span>
+            </div>
+
+            <div class="kv__row">
+              <span class="kv__k">Miasto</span>
+              <span class="kv__v">Warszawa</span>
+            </div>
+          </div>
+
+          <div class="btns">
+            <a class="btn" href="https://github.com/DmytroHalynovych67724" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </section>
+
+        <section class="s s--dark" id="umiejetnosci">
+          <h2 class="s__title"><span class="ico ico-skills" aria-hidden="true"></span>Umiejętności</h2>
+
+          <ul class="bullets">
+            <li>Podstawy HTML i CSS</li>
+            <li>Podstawowa znajomość Git i GitHub</li>
+            <li>Dobra organizacja pracy</li>
+            <li>Komunikatywność</li>
+            <li>Chęć rozwoju i nauki</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="content">
+
+        <section class="s" id="o-mnie">
+          <h2 class="s__title"><span class="ico ico-about" aria-hidden="true"></span>O mnie</h2>
+          <p>
+            Jestem osobą uczącą się tworzenia stron internetowych. Cenię logiczną strukturę kodu,
+            porządek oraz systematyczną pracę. Rozwijam się w kierunku front-end.
+          </p>
+        </section>
+
+        <section class="s" id="doswiadczenie">
+          <h2 class="s__title"><span class="ico ico-work" aria-hidden="true"></span>Doświadczenie</h2>
+
+          <article class="job">
+            <div class="job__meta">
+              <span class="job__date">01.2025 – obecnie</span>
+              <span class="job__place">Warszawa</span>
+            </div>
+            <h3 class="job__title">Praktyka własna – rozwój umiejętności IT</h3>
+            <p class="job__company">ITS SOLUTION</p>
+            <ul class="checks">
+              <li>Samodzielna nauka HTML i CSS</li>
+              <li>Tworzenie prostych stron internetowych</li>
+              <li>Praca nad projektami edukacyjnymi</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job__meta">
+              <span class="job__date">06.2024 – 12.2024</span>
+              <span class="job__place">Warszawa</span>
+            </div>
+            <h3 class="job__title">Wolontariat – wsparcie organizacyjne</h3>
+            <p class="job__company">ITS SOLUTION</p>
+            <ul class="checks">
+              <li>Pomoc przy organizacji wydarzeń</li>
+              <li>Kontakt z uczestnikami</li>
+              <li>Przygotowanie materiałów informacyjnych</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="s" id="edukacja">
+          <h2 class="s__title"><span class="ico ico-edu" aria-hidden="true"></span>Edukacja</h2>
+          <div class="edu">
+            <p class="edu__line"><strong>Uczelnia:</strong> Akademia finansów i biznesu Vistula</p>
+            <p class="edu__line"><strong>Kierunek:</strong> Informatyka</p>
+            <p class="edu__line"><strong>Okres:</strong> 2023 – obecnie</p>
+          </div>
+        </section>
+
+        <section class="s" id="projekty">
+          <h2 class="s__title"><span class="ico ico-projects" aria-hidden="true"></span>Projekty</h2>
+          <ol class="nums">
+            <li>CV jako strona WWW w HTML (semantyka, sekcje, linki)</li>
+            <li>Strona internetowa MOJE KINO</li>
+          </ol>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>© Dmytro Halynovych 67724</p>
+    </footer>
+
+  </div>
+
+  <button id="theme-toggle">Theme</button>
+  
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const link = document.getElementById('main-style');
+    btn.onclick = () => {
+      if (link.getAttribute('href').includes('red.css')) {
+        link.setAttribute('href', 'green.css');
+        btn.style.backgroundColor = '#2e8b57';
+      } else {
+        link.setAttribute('href', 'red.css');
+        btn.style.backgroundColor = '#dc2626';
+      }
+    };
+  </script>
+</body>
+</html>
