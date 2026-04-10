@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zmieniaj kolor tła</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f8f2; color: #1e3523; margin: 0; padding: 20px; }
+    .card { max-width: 600px; margin: 0 auto; background: white; border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    button { background: #2e8b57; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; }
+    button:hover { background: #256b45; }
+    a { display: inline-block; margin-top: 18px; color: #2e8b57; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Zmieniaj kolor tła</h1>
+    <p>Kliknij przycisk, aby za każdym razem ustawić inny kolor strony.</p>
+    <button id="change-color">Zmień kolor</button>
+    <p id="color-name" style="margin-top:18px;"></p>
+    <a href="../index.html">⟵ Wróć do CV</a>
+  </div>
+
+  <script>
+    const colors = [
+      { name: 'Miętowy', value: '#d9f4e1' },
+      { name: 'Jasnoniebieski', value: '#d9eef8' },
+      { name: 'Łososiowy', value: '#f9d8d4' },
+      { name: 'Jasnoliliowy', value: '#f1e5ff' },
+      { name: 'Kremowy', value: '#fff6dd' }
+    ];
+
+    const btn = document.getElementById('change-color');
+    const label = document.getElementById('color-name');
+
+    btn.addEventListener('click', () => {
+      const random = colors[Math.floor(Math.random() * colors.length)];
+      document.body.style.backgroundColor = random.value;
+      label.textContent = `Aktualny kolor: ${random.name}`;
+    });
+  </script>
+</body>
+</html>
