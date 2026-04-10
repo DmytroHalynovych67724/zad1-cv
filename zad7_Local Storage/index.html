@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV – Dmytro Halynovych 67724</title>
+  <link rel="stylesheet" href="red.css" id="main-style" />
+  <link rel="stylesheet" href="button.css" />
+</head>
+
+<body>
+  <div class="cv">
+
+    <header class="top">
+      <div class="top__right">
+        <h1>Dmytro Halynovych</h1>
+        <p class="top__role">STUDENT</p>
+      </div>
+    </header>
+
+    <main class="layout">
+
+      <div class="sidebar">
+        <div class="sidebar__photo">
+          <img src="photo.jpg" alt="Zdjęcie profilowe – Dmytro Halynovych" />
+        </div>
+
+        <section class="s s--dark" id="kontakt">
+          <h2 class="s__title"><span class="ico ico-user" aria-hidden="true"></span>Kontakt</h2>
+
+          <div class="kv">
+            <div class="kv__row">
+              <span class="kv__k">E-mail</span>
+              <span class="kv__v"><a href="mailto:dhalyno1@stu.vistula.edu.pl">dhalyno1@stu.vistula.edu.pl</a></span>
+            </div>
+
+            <div class="kv__row">
+              <span class="kv__k">Telefon</span>
+              <span class="kv__v"><a href="tel:+48123123123">+48 123 123 123</a></span>
+            </div>
+
+            <div class="kv__row">
+              <span class="kv__k">Miasto</span>
+              <span class="kv__v">Warszawa</span>
+            </div>
+          </div>
+
+          <div class="btns">
+            <a class="btn" href="https://github.com/DmytroHalynovych67724" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </section>
+
+        <section class="s s--dark" id="umiejetnosci">
+          <h2 class="s__title"><span class="ico ico-skills" aria-hidden="true"></span>Umiejętności</h2>
+          <button id="toggle-section-btn" class="btn">Ukryj sekcję</button>
+          <div id="section-to-hide">
+            <ul class="bullets" id="skills-list">
+              <!-- Umiejętności są wczytywane z data.json przez JavaScript -->
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <div class="content">
+
+        <section class="s" id="o-mnie">
+          <h2 class="s__title"><span class="ico ico-about" aria-hidden="true"></span>O mnie</h2>
+          <p>
+            Jestem osobą uczącą się tworzenia stron internetowych. Cenię logiczną strukturę kodu,
+            porządek oraz systematyczną pracę. Rozwijam się w kierunku front-end.
+          </p>
+        </section>
+
+        <section class="s" id="doswiadczenie">
+          <h2 class="s__title"><span class="ico ico-work" aria-hidden="true"></span>Doświadczenie</h2>
+
+          <article class="job">
+            <div class="job__meta">
+              <span class="job__date">01.2025 – obecnie</span>
+              <span class="job__place">Warszawa</span>
+            </div>
+            <h3 class="job__title">Praktyka własna – rozwój umiejętności IT</h3>
+            <p class="job__company">ITS SOLUTION</p>
+            <ul class="checks">
+              <li>Samodzielna nauka HTML i CSS</li>
+              <li>Tworzenie prostych stron internetowych</li>
+              <li>Praca nad projektami edukacyjnymi</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="s" id="projekty">
+          <h2 class="s__title"><span class="ico ico-code" aria-hidden="true"></span>Projekty</h2>
+          <div id="projects-list" class="projects">
+            <!-- Projekty są wczytywane z data.json przez JavaScript -->
+          </div>
+        </section>
+
+        <section class="s" id="zadania">
+          <h2 class="s__title"><span class="ico ico-list" aria-hidden="true"></span>Plan rozwoju</h2>
+          <p style="color: #d2d2d8; margin-bottom: 16px; font-size: 13px; max-width: 720px;">
+            Zapisz swoje zadania rozwojowe lub kroki do kolejnego projektu. Dzięki localStorage lista pozostanie po odświeżeniu strony.
+          </p>
+          <form id="task-form" class="task-form">
+            <div class="form-group">
+              <label for="task-input">Dodaj nowe zadanie</label>
+              <input type="text" id="task-input" name="task" placeholder="Wpisz zadanie..." />
+            </div>
+            <button type="submit" class="btn">Dodaj</button>
+          </form>
+          <div id="task-feedback" class="task-feedback"></div>
+          <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <section class="s" id="kontakt-formularz">
+          <h2 class="s__title">Formularz kontaktowy</h2>
+          <form id="feedback-form" novalidate>
+            <div class="form-group">
+              <label for="name">Imię:</label>
+              <input type="text" id="name" name="name">
+              <span class="error-msg" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="surname">Nazwisko:</label>
+              <input type="text" id="surname" name="surname">
+              <span class="error-msg" id="surname-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email">
+              <span class="error-msg" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Wiadomość:</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+              <span class="error-msg" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="btn">Wyślij wiadomość</button>
+          </form>
+          <div id="form-success" style="display:none; margin-top: 15px;">
+            Sukces! Formularz został poprawnie zweryfikowany (67724).
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>© Dmytro Halynovych 67724</p>
+    </footer>
+
+  </div>
+
+  <button id="theme-toggle">Theme</button>
+  
+  <script src="script.js"></script>
+</body>
+</html>
