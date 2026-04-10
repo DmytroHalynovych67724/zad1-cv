@@ -1,0 +1,19 @@
+#theme-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background: var(--accent);
+  border: 2px solid #fff;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#theme-toggle:hover {
+  background: var(--accent-light);
+  color: #000;
+}

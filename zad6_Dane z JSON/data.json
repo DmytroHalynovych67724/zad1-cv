@@ -1,0 +1,27 @@
+{
+  "about": "Jestem osobą uczącą się tworzenia stron internetowych. Cenię logiczną strukturę kodu, porządek oraz systematyczną pracę. Rozwijam się w kierunku front-end.",
+  "skills": [
+    "Podstawy HTML i CSS",
+    "Podstawowa znajomość Git i GitHub",
+    "Dobra organizacja pracy",
+    "Komunikatywność",
+    "Chęć rozwoju i nauki"
+  ],
+  "projects": [
+    {
+      "title": "Zmieniaj kolor tła",
+      "description": "Mała aplikacja, która losowo zmienia kolor tła strony.",
+      "link": "projects/color-switcher.html"
+    },
+    {
+      "title": "Prosty kalkulator",
+      "description": "Kalkulator pozwalający dodawać, odejmować, mnożyć i dzielić.",
+      "link": "projects/calculator.html"
+    },
+    {
+      "title": "Losowy cytat",
+      "description": "Generuje losowy cytat po każdym kliknięciu przycisku.",
+      "link": "projects/random-quote.html"
+    }
+  ]
+}

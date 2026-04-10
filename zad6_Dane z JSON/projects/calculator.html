@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prosty kalkulator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eef7ff; color: #0f2a44; margin: 0; padding: 20px; }
+    .card { max-width: 560px; margin: 0 auto; background: white; border-radius: 16px; padding: 24px; box-shadow: 0 10px 30px rgba(0,0,0,.08); }
+    .inputs { display: grid; gap: 12px; margin-bottom: 18px; }
+    input, select { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 10px; }
+    button { background: #1d4ed8; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .result { margin-top: 18px; font-weight: bold; }
+    a { display: inline-block; margin-top: 18px; color: #1d4ed8; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Prosty kalkulator</h1>
+    <div class="inputs">
+      <input id="number1" type="number" placeholder="Pierwsza liczba" />
+      <input id="number2" type="number" placeholder="Druga liczba" />
+      <select id="operation">
+        <option value="add">Dodaj</option>
+        <option value="subtract">Odejmij</option>
+        <option value="multiply">Pomnóż</option>
+        <option value="divide">Podziel</option>
+      </select>
+    </div>
+    <button id="calculate">Oblicz</button>
+    <p class="result" id="output"></p>
+    <a href="../index.html">⟵ Wróć do CV</a>
+  </div>
+
+  <script>
+    const number1 = document.getElementById('number1');
+    const number2 = document.getElementById('number2');
+    const operation = document.getElementById('operation');
+    const calculate = document.getElementById('calculate');
+    const output = document.getElementById('output');
+
+    calculate.addEventListener('click', () => {
+      const a = parseFloat(number1.value);
+      const b = parseFloat(number2.value);
+      let result = '';
+
+      if (Number.isNaN(a) || Number.isNaN(b)) {
+        output.textContent = 'Wprowadź dwie liczby.';
+        return;
+      }
+
+      switch (operation.value) {
+        case 'add': result = a + b; break;
+        case 'subtract': result = a - b; break;
+        case 'multiply': result = a * b; break;
+        case 'divide': result = b !== 0 ? a / b : 'Nie można dzielić przez zero!'; break;
+      }
+
+      output.textContent = `Wynik: ${result}`;
+    });
+  </script>
+</body>
+</html>
