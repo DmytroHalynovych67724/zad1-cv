@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
                 } catch (error) {
                     successMsg.style.display = 'block';
-                    successMsg.textContent = 'Błąd wysyłania. Перевір конфігурацію Firebase і спробуй ще раз.';
+                    successMsg.textContent = 'Błąd wysyłania. Sprawdź konfigurację Firebase i spróbuj jeszcze raz.';
                     successMsg.style.color = '#d93025';
                     console.error('Błąd wysyłania formularza:', error);
                 }
