@@ -59,8 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
             fields.forEach(field => {
                 const input = document.getElementById(field.id);
                 const errorSpan = document.getElementById(field.errId);
-                const val = input.value.trim();
-                
+                const val = input ? input.value.trim() : '';
+
+                if (!input || !errorSpan) {
+                    isValid = false;
+                    return;
+                }
+
                 input.classList.remove('invalid');
                 errorSpan.textContent = "";
 
@@ -100,15 +105,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 try {
                     await database.ref('feedback').push(formData);
-                    successMsg.style.display = 'block';
-                    successMsg.textContent = 'Sukces! Wiadomość została wysłana do Firebase Realtime Database.';
-                    successMsg.style.color = '#0f9d58';
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.textContent = 'Sukces! Wiadomość została wysłana do Firebase Realtime Database.';
+                        successMsg.style.color = '#0f9d58';
+                        setTimeout(() => { if (successMsg) successMsg.style.display = 'none'; }, 5000);
+                    }
                     form.reset();
-                    setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
                 } catch (error) {
-                    successMsg.style.display = 'block';
-                    successMsg.textContent = 'Błąd wysyłania. Sprawdź konfigurację Firebase i spróbuj jeszcze raz.';
-                    successMsg.style.color = '#d93025';
+                    if (successMsg) {
+                        successMsg.style.display = 'block';
+                        successMsg.textContent = 'Błąd wysyłania. Sprawdź konfigurację Firebase i spróbuj jeszcze raz.';
+                        successMsg.style.color = '#d93025';
+                    }
                     console.error('Błąd wysyłania formularza:', error);
                 }
             }

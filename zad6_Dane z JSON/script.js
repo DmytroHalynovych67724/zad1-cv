@@ -46,8 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
             fields.forEach(field => {
                 const input = document.getElementById(field.id);
                 const errorSpan = document.getElementById(field.errId);
-                const val = input.value.trim();
-                
+                const val = input ? input.value.trim() : '';
+
+                if (!input || !errorSpan) {
+                    isValid = false;
+                    return;
+                }
+
                 input.classList.remove('invalid');
                 errorSpan.textContent = "";
 
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            if (isValid) {
+            if (isValid && successMsg) {
                 successMsg.style.display = 'block';
                 form.reset();
                 setTimeout(() => { successMsg.style.display = 'none'; }, 5000);
