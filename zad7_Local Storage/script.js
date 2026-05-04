@@ -26,7 +26,6 @@ if (themeBtn && mainStyle) {
         localStorage.setItem(THEME_STORAGE_KEY, newTheme);
     };
 }
-    }
 
     if (toggleBtn && sectionToHide) {
         toggleBtn.onclick = () => {
