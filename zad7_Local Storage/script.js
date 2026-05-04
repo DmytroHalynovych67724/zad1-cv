@@ -4,16 +4,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('toggle-section-btn');
     const sectionToHide = document.getElementById('section-to-hide');
 
-    if (themeBtn && mainStyle) {
-        themeBtn.onclick = () => {
-            if (mainStyle.getAttribute('href').includes('red.css')) {
-                mainStyle.setAttribute('href', 'green.css');
-                themeBtn.style.backgroundColor = '#2e8b57';
-            } else {
-                mainStyle.setAttribute('href', 'red.css');
-                themeBtn.style.backgroundColor = '#dc2626';
-            }
-        };
+const THEME_STORAGE_KEY = 'userTheme';
+
+if (themeBtn && mainStyle) {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme) {
+        mainStyle.setAttribute('href', savedTheme);
+        themeBtn.style.backgroundColor = savedTheme.includes('green.css') ? '#2e8b57' : '#dc2626';
+    }
+
+    themeBtn.onclick = () => {
+        let newTheme = '';
+        if (mainStyle.getAttribute('href').includes('red.css')) {
+            newTheme = 'green.css';
+            themeBtn.style.backgroundColor = '#2e8b57';
+        } else {
+            newTheme = 'red.css';
+            themeBtn.style.backgroundColor = '#dc2626';
+        }
+        mainStyle.setAttribute('href', newTheme);
+        localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+    };
+}
     }
 
     if (toggleBtn && sectionToHide) {
